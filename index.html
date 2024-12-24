@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Christmas Animation</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="merry-christmas">
+    <div class="window">
+      <div class="christmas-tree">
+        <div class="star"></div>
+        <div class="christmas-lights"></div>
+        <div class="balls"></div>
+      </div>
+      <div class="curtains"></div>
+      <div class="window-details"></div>
+    </div>
+    <div class="snow">
+      <div class="snowflakes"></div>
+      <div class="snowflakes-2"></div>
+      <div class="snowflakes-3"></div>
+      <div class="snowflakes-4"></div>
+      <div class="snowflakes-5"></div>
+    </div>
+    <div class="bricks"></div>
+  </div>
+
+  <!-- Hidden Audio Element -->
+  <audio id="background-audio" loop muted>
+    <source src="./alliwantforchristmasisyou.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="message">
+    <span>Merry Christmas<br> my love ❤️</span>
+  </div>
+  <div class="message2">
+    <span>🐳💗🐣</span>
+  </div>
+
+  <!-- Adding message to encourage clicking -->
+  <div class="message3">
+    Tap!
+  </div>
+  
+  
+
+  <script>
+    // Wait for any user click or tap on the body to play audio
+    document.body.addEventListener('click', function() {
+      var audio = document.getElementById('background-audio');
+      
+      // Start playing audio and unmute after user clicks
+      audio.muted = false; // Unmute audio
+      audio.play().then(() => {
+        console.log('Audio is playing');
+      }).catch(function(error) {
+        console.log('Error playing audio:', error);
+      });
+    });
+  </script>
+</body>
+</html>
